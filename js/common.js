@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-
+if (document.querySelector(".cursor")) {
 	// curser
 	const cursor = document.querySelector(".cursor");
 	const follower = document.querySelector(".cursor-follower");
@@ -49,6 +49,7 @@ jQuery(document).ready(function ($) {
 			cursor.classList.remove("active");
 		});
 	});
+	}
 
 	// social slider
 
