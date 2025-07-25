@@ -1,5 +1,51 @@
 jQuery(document).ready(function ($) {
 
+	 $("<span class='clickD'></span>").insertAfter(".navbar-nav li.menu-item-has-children > a");
+    $('.navbar-nav li .clickD').click(function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        if ($this.next().hasClass('show')) {
+            $this.next().removeClass('show');
+            $this.removeClass('toggled');
+        }
+        else {
+            $this.parent().parent().find('.sub-menu').removeClass('show');
+            $this.parent().parent().find('.toggled').removeClass('toggled');
+            $this.next().toggleClass('show');
+            $this.toggleClass('toggled');
+        }
+    });
+
+    $(window).on('resize', function () {
+        if ($(this).width() < 1025) {
+            $('html').click(function () {
+                $('.navbar-nav li .clickD').removeClass('toggled');
+                $('.toggled').removeClass('toggled');
+                $('.sub-menu').removeClass('show');
+            });
+            $(document).click(function () {
+                $('.navbar-nav li .clickD').removeClass('toggled');
+                $('.toggled').removeClass('toggled');
+                $('.sub-menu').removeClass('show');
+            });
+            $('.navbar-nav').click(function (e) {
+                e.stopPropagation();
+            });
+        }
+    });
+    // Navbar end
+
+
+
+    /* ===== For menu animation === */
+    $(".navbar-toggler").click(function () {
+        $(".navbar-toggler").toggleClass("open");
+        $(".navbar-toggler .stick").toggleClass("open");
+        $('body,html').toggleClass("open-nav");
+    });
+
+    // Navbar end
+
 if (document.querySelector(".cursor")) {
 	// curser
 	const cursor = document.querySelector(".cursor");
@@ -101,22 +147,28 @@ if (document.querySelector(".cursor")) {
     {
       breakpoint: 1199,
       settings: {
-        slidesToShow: 3,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
         slidesToShow: 2,
       }
     },
     {
-      breakpoint: 480,
+      breakpoint: 991,
       settings: {
-        slidesToShow: 1,
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 2,
         slidesToScroll: 1
       }
-    }
+    },
+    {
+      breakpoint: 475,
+      settings: {
+        slidesToShow: 1,
+      }
+    },
     // You can unslick at a given breakpoint now by adding:
     // settings: "unslick"
     // instead of a settings object
@@ -131,7 +183,7 @@ if (document.querySelector(".cursor")) {
 		arrows: false,
 		autoplay: true,
 		fade: true,
-		asNavFor: '.js-client-images-slider'
+		asNavFor: '.js-client-images-slider',
 	});
 	$('.js-client-images-slider').slick({
 		slidesToShow: 5,
@@ -141,6 +193,27 @@ if (document.querySelector(".cursor")) {
 		autoplay: true,
 		arrows: false,
 		centerMode: true,
-		focusOnSelect: true
+		focusOnSelect: true,
+    	responsive: [
+    {
+      breakpoint: 1199,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 3,
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1
+      }
+    }
+  ]
 	});
 });
