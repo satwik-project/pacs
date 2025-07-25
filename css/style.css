@@ -2057,6 +2057,11 @@ button.cmn-btn:hover {
 	background-color: var(--bg-blue);
 }
 
+.form-popup h2 {
+	font-size: 50px;
+	color: var(--bg-dark-blue);
+}
+
 /* features-sec end */
 
 /* ========== responsive css =========== */
@@ -2913,6 +2918,10 @@ button.cmn-btn:hover {
     padding: 100px 0 0;
 	}
 
+	.form-popup h2 {
+	font-size: 40px;
+}
+
 }
 
 
@@ -3245,6 +3254,10 @@ button.cmn-btn:hover {
 	.img-wave {
 		display: none
 	}
+
+		.form-popup h2 {
+	font-size: 40px;
+}
 }
 
 @media (max-width: 479px) {

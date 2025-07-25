@@ -41,8 +41,9 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                <div class="">
-                    <a href="#url" class="cmn-btn">Request A Demo</a>
+                <div class="headre-right">
+                    <a href="javascript:void(0)" class="cmn-btn" data-bs-toggle="modal"
+                        data-bs-target="#formOpen">Request A Demo</a>
                 </div>
             </nav>
 
@@ -495,6 +496,51 @@
         </div>
     </footer>
 
+     <!-- Modal -->
+    <div class="modal fade form-popup" id="formOpen" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="">
+                    <button type="button" class="btn-close-form" data-bs-dismiss="modal" aria-label="Close"><img src="images/close-icon.svg" alt=""></button>
+                    <h2>Contact our research and development team</h2>
+                    <div class="contact-col-form-wrap">
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="form-col">
+                                        <input type="text" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-col">
+                                        <input type="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="form-col">
+                                        <input type="tel" placeholder="Phone No">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-col">
+                                        <textarea placeholder="Additional Details"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-col">
+                                        <input type="submit" class="btn-submit" value="Submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
     <!-- Jquery-->
     <script src="js/jquery-min.js"></script>
